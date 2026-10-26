@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100b0d">
+<meta name="description" content="Dr. Peptide contact information for Jimmie Einbund and Tim Daubert.">
+<title>Dr. Peptide | Contact Us</title>
+<style>
+:root{color-scheme:dark;--red:#ed233e;--light:#f9f5f6;--muted:#c6b9bf}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -10%,#5e1425 0%,#200d16 42%,#09090d 82%);font-family:Arial,Helvetica,sans-serif;color:var(--light);display:flex;align-items:center;justify-content:center;padding:30px 16px}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0 38px,#ffffff05 39px 40px)}main{position:relative;width:100%;max-width:570px;text-align:center}.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#ff8799;font-weight:800;margin-bottom:12px}.brand{font-family:Georgia,serif;font-size:clamp(48px,11vw,76px);font-style:italic;font-weight:900;letter-spacing:-.065em;line-height:1.04;text-shadow:3px 5px 0 #660e21,0 0 28px #ed233e70}.brand span{color:#ff4d65}.orbit{border:3px solid #e72844;border-radius:50%;padding:10px 28px 14px;display:inline-block;transform:rotate(-5deg);margin:15px 0 8px}.orbit .brand{transform:rotate(5deg)}h1{font-size:19px;letter-spacing:.11em;text-transform:uppercase;margin:22px 0 9px}.tagline{font-size:17px;color:#e4c9d0;margin:0 0 28px}.cards{display:grid;gap:16px}.card{background:linear-gradient(150deg,#282028,#151318);border:1px solid #713343;border-radius:18px;padding:23px 20px;text-align:left;box-shadow:0 12px 24px #0005}.name{font-size:23px;font-weight:800;margin:0 0 6px}.role{font-size:11px;text-transform:uppercase;letter-spacing:.19em;color:#ff8596;margin:0 0 15px}.number{font-size:20px;color:#fff;text-decoration:none;font-weight:600}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:19px}.btn{border-radius:10px;display:block;padding:13px 10px;text-align:center;font-weight:800;text-decoration:none;font-size:14px}.primary{background:var(--red);color:white}.secondary{background:#f6edf0;color:#1b0e14}.btn:focus-visible,.number:focus-visible{outline:3px solid white;outline-offset:3px}footer{font-size:12px;color:#b5a2ab;line-height:1.6;margin:25px 10px 0}small{display:block;margin-top:8px;color:#aa929e}@media(min-width:530px){.cards{grid-template-columns:1fr 1fr}.card{padding:21px 16px}.name{font-size:20px}.number{font-size:18px}.actions{grid-template-columns:1fr}.btn{padding:12px}}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">Connect with us</div>
+<div class="orbit"><div class="brand">Dr. <span>Peptide</span></div></div>
+<h1>Save our contact information</h1>
+<p class="tagline">Better You. Bolder Tomorrow.</p>
+<section class="cards" aria-label="Contacts">
+<article class="card"><p class="role">Dr. Peptide • Contact</p><h2 class="name">Jimmie Einbund</h2><a class="number" href="tel:+16612195568">(661) 219-5568</a><div class="actions"><a class="btn primary" href="tel:+16612195568">Call Jimmie</a><a class="btn secondary" id="jimmie-save" download="Jimmie-Einbund.vcf" href="#">Save Contact</a></div></article>
+<article class="card"><p class="role">Dr. Peptide • Contact</p><h2 class="name">Tim Daubert</h2><a class="number" href="tel:+16615421550">(661) 542-1550</a><div class="actions"><a class="btn primary" href="tel:+16615421550">Call Tim</a><a class="btn secondary" id="tim-save" download="Tim-Daubert.vcf" href="#">Save Contact</a></div></article>
+</section>
+<footer>Dr. Peptide • Contact directory<br>Tap “Save Contact” to download a contact card to your phone.<small>Contact details only. No medical advice or treatment information is provided on this page.</small></footer>
+</main>
+<script>
+function contactData(first,last,phone){return ['BEGIN:VCARD','VERSION:3.0',`N:${last};${first};;;`,`FN:${first} ${last}`,'ORG:Dr. Peptide',`TEL;TYPE=CELL:${phone}`,'END:VCARD'].join('\r\n')+'\r\n'}
+function attach(id,first,last,phone){const link=document.getElementById(id);const data=contactData(first,last,phone);link.href='data:text/vcard;charset=utf-8,'+encodeURIComponent(data)}
+attach('jimmie-save','Jimmie','Einbund','+16612195568');attach('tim-save','Tim','Daubert','+16615421550');
+</script>
+</body>
+</html>
